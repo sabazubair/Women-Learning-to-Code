@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.css"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1>Search for a Weather Forecast</h1>
+          <h6>
+            Current Weather Data by:
+            <a href="https://openweathermap.org/">OpenWeatherMap API</a>
+          </h6>
+          <form class="search-bar" class="form-group">
+            <input
+              type="text"
+              placeholder="Enter a city..."
+              class="form-control"
+            />
+            <button type="submit" class="btn btn-primary btn-block">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+      <section class="row" id="content"></section>
+    </div>
+    <!-- <footer class="footer">
+      <div>
+        <span class="text-muted">Made with 💜 by Saba</span>
+      </div>
+    </footer> -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
