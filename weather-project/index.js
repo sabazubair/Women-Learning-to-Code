@@ -1,25 +1,15 @@
 $(document).ready(function () {
-  $("form").on("submit", function (event) {
-    // Recall: Form's submit. They do not listen to clicks.
-    // Always remember to call preventDefault to stop page from refreshing.
-    event.preventDefault();
-
-    let userSearch = $("input[type=text]").val();
-
-    getWeather(userSearch);
-    $("input[type=text]").val(" ");
-  });
-
-  getWeather = (query) => {
+  const getWeather = (search) => {
+    console.log(search);
     const response = $.ajax({
-      url: `https://api.openweathermap.org/data/2.5/weather?q=${query}&units=metric&appid=${APIKEY}`,
+      url: `https://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=APIKEY`,
       method: "GET",
       dataType: "json",
+    }).done(function (results) {
+      displayWeatherCard(results);
     });
-    console.log(response);
   };
-
-  displayWeatherCard = (results) => {
+  const displayWeatherCard = (results) => {
     let icon = results.weather[0].icon;
     let iconURL = `http://openweathermap.org/img/wn/${icon}.png`;
     $("#content").append(
@@ -40,4 +30,16 @@ $(document).ready(function () {
     `
     );
   };
+
+  $("form").on("submit", function (event) {
+    // Recall: Form's submit. They do not listen to clicks.
+    // Always remember to call preventDefault to stop page from refreshing.
+    event.preventDefault();
+    // Create variable userSearch and assign it to jQuery selector, retrieving it's value.
+    let userSearch = $("input[type=text]").val();
+    // Call on getWeather function, feeding it in argument userSearch
+    getWeather(userSearch);
+    // Clear input field upon submission.
+    $("input[type=text]").val(" ");
+  });
 });
