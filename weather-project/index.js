@@ -2,7 +2,7 @@ $(document).ready(function () {
   const getWeather = (search) => {
     console.log(search);
     const response = $.ajax({
-      url: `https://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=APIKEY`,
+      url: `https://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=eb6572b343471e038cfe2ab51b4a24c4`,
       method: "GET",
       dataType: "json",
     }).done(function (results) {
@@ -14,19 +14,15 @@ $(document).ready(function () {
     let iconURL = `http://openweathermap.org/img/wn/${icon}.png`;
     $("#content").append(
       `
-    <div class="col-12">
-      <div class="card-deck">
-        <div class="card" style="width: 18rem;">
+        <div class="card-deck">
           <div class="card-body">
             <img src="${iconURL}"/>
-            <h6 class="card-title">City: ${results.name}</p>
+            <h4 class="card-title">City: ${results.name}</h4>
             <p class="card-text">Temp: ${results.main.temp}°C</p>
             <p class="card-text">Feels like: ${results.main.feels_like}°C</p>
             <p class="card-text">Description: ${results.weather[0].description}</p>
           </div>
         </div>
-      </div>
-    </div>
     `
     );
   };
