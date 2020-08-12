@@ -2,7 +2,7 @@ $(document).ready(function () {
   const getWeather = (search) => {
     console.log(search);
     const response = $.ajax({
-      url: `https://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=eb6572b343471e038cfe2ab51b4a24c4`,
+      url: `https://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=APIKEY`,
       method: "GET",
       dataType: "json",
     }).done(function (results) {
