@@ -12,7 +12,7 @@ $(document).ready(function () {
   const displayWeatherCard = (results) => {
     let icon = results.weather[0].icon;
     let iconURL = `http://openweathermap.org/img/wn/${icon}.png`;
-    $("#content").append(
+    $("#results").append(
       `
         <div class="card-deck">
           <div class="card-body">
