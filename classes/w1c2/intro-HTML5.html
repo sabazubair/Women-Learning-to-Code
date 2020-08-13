@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Head is not visible on the browser. -->
+  <head>
+    <!-- meta tags specifies which character set a website is written in.  -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Set title here! Visible on browser tab. -->
+    <title>Intro to HTML5</title>
+    <style>
+      header,
+      nav,
+      main,
+      article,
+      footer {
+        border: 1px solid green;
+      }
+
+      div {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <!-- Body is visible on the browser. -->
+  <body>
+    <h1>Intro to HTML5</h1>
+    <!-- #1 -->
+    <img
+      src="./assets/html5vshtml4.jpg"
+      width="70%"
+      alt="html5 syntax vs html4 syntax"
+    />
+    <!-- --- HTML5 --- -->
+    <h3>HTML5</h3>
+    <header>header</header>
+    <nav>nav contains navigation links</nav>
+    <section>
+      <article>article #1</article>
+      <article>article #2</article>
+      <article>article #3</article>
+    </section>
+    <footer>contains footnotes, can act as a secondary nav</footer>
+    <p>- section groups distinct sections of content or functionality</p>
+    <p>
+      - article is for containing related individual standalone pieces of
+      content, such as individual blog posts, videos, images or news items.
+    </p>
+    <p>
+      Note: Words are interchangeable. You may see main instead of section being
+      used. Or aside instead of nav. Under the hood, they're simply containers.
+      Our goal is just to use something other than "div" or "span".
+    </p>
+    <!-- --- HTML4 --- -->
+    <h3>HTML4</h3>
+    <div>header</div>
+    <div>navbar</div>
+    <div>
+      <div>article #1</div>
+      <div>article #2</div>
+      <div>article #3</div>
+    </div>
+    <div>footer</div>
+  </body>
+</html>
+
+<!-- COMMENTS: do not get evaluated!-->
+<!-- To create a comment: cmd + / on Mac, alt + up/down (arrow key) on Windows -->
