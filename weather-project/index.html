@@ -10,7 +10,6 @@
       rel="stylesheet"
     />
   </head>
-
   <body>
     <main>
       <h1>Search for a Weather Forecast</h1>
@@ -18,13 +17,15 @@
         Current Weather Data by:
         <a href="https://openweathermap.org/">OpenWeatherMap API</a>
       </h3>
+      <!-- WAI-ARIA recommendations for form. https://www.w3.org/TR/wai-aria-practices-1.1/#aria_lh_form -->
+      <!-- Search Landmark: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Search_role -->
       <form class="search-bar">
         <input type="text" placeholder="Enter a city..." />
         <button type="submit">
           Submit
         </button>
       </form>
-      <section id="content"></section>
+      <section id="results"></section>
     </main>
     <footer class="footer">
       <span>Made with 💜 by StudentName</span>
