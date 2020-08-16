@@ -1,0 +1,5 @@
+- inline and block elements
+- creating a link, anchor tag
+- <a href="" target="_blank">a link</a>
+- semantic HTML
+- tab, <title></title>, located within the head

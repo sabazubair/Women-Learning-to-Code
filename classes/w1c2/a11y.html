@@ -28,17 +28,17 @@
     <!-- 1. Accessibility documentation: https://www.w3.org/TR/wai-aria-practices-1.1/examples/button/button.html -->
     <!-- I understand what accessibility for a button entails. -->
     <!-- 2. Creating a button with a button tag. -->
-    <button>
+    <!-- <button>
       I'm an HTML Button. I'm accessible by default.
-    </button>
+    </button> -->
     <!-- Pros: accessible by tab key, focus -->
     <!-- 3. We can't always use a button tag. Sometimes, we need a div. -->
     <!-- <div>I'm a div, styled as a button</div> -->
     <!-- The styles aren't important here. They're absolutely the same for all buttons. The reason the button, created with a div, is full length, is because it's made with a div, which by default is 100% width (block level element).-->
     <!-- Problem: I am inaccessible w/ tab. I do not focus. Solution: as per WAI-ARIA docs: -->
-    <!-- <div role="button" tabindex="0"> -->
-    <!-- I'm a div, styled as a button. I'm accessible.
-    </div> -->
+    <div role="button" tabindex="0">
+      --> I'm a div, styled as a button. I'm accessible.
+    </div>
     <!-- role attribute provides context, tabindex=0 allows for keyboard access -->
   </body>
 </html>
