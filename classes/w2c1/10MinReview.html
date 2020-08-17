@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>W1D2 Review</title>
+  </head>
+  <body>
+    <header>
+      <h1>W1D2 Review</h1>
+      <h3>HTML5</h3>
+    </header>
+
+    <section>
+      <ul>
+        <li>Syntax + Terminology</li>
+        <li>Default Styles</li>
+        <li>Accessibility</li>
+        <li>Code-Along: Weather Project</li>
+      </ul>
+    </section>
+
+    <section>
+      <h4>Syntax + Terminology</h4>
+      <ul>
+        <li>Semantic* HTML - human and machine-readable ✅</li>
+        <li>opening tags - contain attributes!</li>
+        <li>closing tags</li>
+        <li>self-closing tags - not all tags have closing tags</li>
+        <li>
+          attributes - what's an example? image tag one required attribute (src)
+          and optional attributes like align, height, width. To learn more, read
+          documentation.
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h4>Exploring HTML Elements</h4>
+      <ol>
+        <li>Text: span, p, h1-h6</li>
+        <p>I'm a paragraph tag.</p>
+        <span>I'm a span tag.</span>
+        <h1>H1</h1>
+        <h2>H2</h2>
+        <h3>H3</h3>
+        <h4>H4</h4>
+        <h5>H5</h5>
+        <h6>H6</h6>
+        <li>
+          Lists: ol (ordered list) - numbered, ul (unordered list) - bullet
+          points, li (nested* list item)
+        </li>
+        <li>
+          Links: anchor tag
+          <a href="#">I'm a link!</a>
+        </li>
+        <li>
+          Image Tag - notice img is a self-closing tag
+          <!-- <img src="#" alt-text="image-example" /> -->
+        </li>
+        <li>
+          Forms
+        </li>
+      </ol>
+    </section>
+
+    <form>
+      <label for="username">Username:</label>
+      <input type="email" name="username" />
+      <label for="password">Password:</label>
+      <input type="password" name="password" />
+      <button type="submit">Submit</button>
+    </form>
+
+    <section>
+      <h4>HTML + Accessibility</h4>
+      <ul>
+        <li>Tech consumers vs Tech creators</li>
+        <li>"meaningless HTML elements" - divs, spans. Use sparingly.</li>
+        <li>Semantic* HTML - human and machine-readable ✅</li>
+        <li>HTML supports accessibility out of the box.</li>
+        <!-- <li>
+          Demo: We created a button with the semantic HTML button tag.
+          Accessible by default. We could access it with our keyboard and it
+          auto-focused upon selection. Then, we created a button with a div -
+          sometimes this is neccessary! It was not accessible. BUT: We added
+          role + tabindex attribute to make it accessible.
+        </li>
+        <li>
+          <div>GOOD: <button>HTML5 button</button></div>
+          <span
+            >GOOD: <span role="button" tabindex="0">div/span button</span></span
+          >
+          <br />
+          <span>BAD/INACCESSIBLE:</span>
+          <span
+            >div/span, styled as button, without role=button or tabindex=0</span
+          >
+        </li> -->
+        <li>
+          Web Content Accessibility Guidelines (WCAG) conducted an annual
+          accessibility analysis of the top 1,000,000 home pages and found these
+          common accessibility mistakes.
+          <img
+            src="./assets/wcag-conformance.png"
+            alt-text="WCAG common accessibility errors"
+          />
+        </li>
+      </ul>
+
+      <ol>
+        <li>
+          low contrast - using bright colors on a white background, pastel
+          colors etc. requires designers + frontend engineers to solve.
+          <img
+            src="./assets/low-contrast.png"
+            alt-text="low contrast website screenshot"
+          />
+        </li>
+        <li>
+          missing alt-text - fix by providing a text explanation of your image.
+        </li>
+        <li>
+          empty links - example: <a href="#"><i class="trash-icon"></i></a> -
+          provide hidden descriptive text. Certain sites keep descriptions
+          hidden from view with class names like "sr-only". You can also use
+          aria-labels.
+        </li>
+        <li>missing form labels - add form labels!</li>
+        <li>
+          empty buttons - use aria-labels or use hidden text styled as class
+          ".sr-only" (screenreader-only).
+        </li>
+        <li>
+          missing document language - easy fix! Why: "The lang attribute allows
+          assistive technology to orient and adapt to the pronunciation and
+          syntax that are specific to the language of the page."
+        </li>
+      </ol>
+    </section>
+  </body>
+</html>
