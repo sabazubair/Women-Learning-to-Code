@@ -7,10 +7,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CSS Demo</title>
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
       /* STYLES HERE - Selecting by HTML Elements */
+      h1 {
+        border: 1px dotted red;
+      }
+      body {
+        background-color: #fff;
+        color: grey;
+        /* clockwise */
+        /* between boxes, or elements */
+        margin: 16px 8px 16px 8px;
+      }
+      ul li {
+        list-style: none;
+        display: inline;
+      }
+      li a {
+        text-decoration: none;
+        color: purple;
+      }
       /* Selecting by HTML Element */
+      /* p {
+        border: 3px solid black;
+      } */
       /* Selecting by Class */
+      .p-bgcolor {
+        background-color: pink;
+        border: 5px solid black;
+        /* within the box */
+        /* clockwise */
+        padding: 16px 8px 16px 8px;
+      }
       /* Selecting by ID */
+      #form-btn {
+        color: green;
+      }
     </style>
   </head>
   <body>
@@ -25,7 +60,7 @@
       </ul>
     </nav>
     <section>
-      <p>
+      <p class="p-bgcolor">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
         perspiciatis consequuntur ex quasi omnis aliquid ea commodi
         reprehenderit reiciendis impedit aspernatur corrupti magni delectus iure
@@ -39,10 +74,10 @@
       </p>
     </section>
     <form>
-      <h4>Subscribe to the CSS Newsletter</h4>
+      <h4 style="color: green;">Subscribe to the CSS Newsletter</h4>
       <label for="email">Email:</label>
       <input type="email" name="email" />
-      <button>Subscribe</button>
+      <button id="form-btn">Subscribe</button>
     </form>
     <script>
       // JAVASCRIPT HERE

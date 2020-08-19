@@ -3,6 +3,7 @@
 ### 6:00-6:20
 
 - 5:45 Login
+- NTS: record meeting + breakout room policy
 - 6:00-6:05: Brainstorm - What do you remember learning last class?
 - reminder: take notes in VS Code with .md file extensions!
 - 6:05 10 min review
@@ -26,7 +27,7 @@
     - 1. internal: within <style></style> tags in the <head></head> of our html document
       - example: body {background-color: powderblue;}
     - 2. internal: inline syntax
-      - example: <h1 style="color:green;">
+      - example: <h1 style="color: green;">
     - 3. external: we link our HTML doc to our CSS stylesheet
       - within our .css file, we would write body { background-color: green; }
 - ## CSS syntax + selectors
@@ -34,7 +35,7 @@
   - inline style (style becomes an attribute!)
     - <h1 style="CSS-property: value;">
   - observe: targetting of HTML elements, use of curly braces, colon and ending every line with semi-colon.
-  - Selectors: elements, \*, class, id
+  - Selectors: elements, class, id
   - file: css-demo.html
 
 ### 7:00-7:50 - Box Model, Inspector, Specificity
@@ -44,7 +45,7 @@
 - "cascading" can be anecdotally thought of as "fighting" style sheets. For example: if you had 2 stylesheets targetting the same element, they would fight one another. Which rule would apply?
   - the fact they are in conflict is not a problem, it's just how the language was designed.
   - there is an order of precedence in CSS.
-  - Order: style id class type
+  - Order: in-line style, id, class type/html element
 - !important = bad practice; acts as an override
 - if we use rules of specificity, we won't need to use !important
 - recall: we can create a website with html, css and javascript. For the last two classes, we've been creating index.html files and telling you, you can add styles in style tags and javascript in script tags. Does this happen in real life? No.
@@ -57,3 +58,6 @@
 - browser extensions: pesticide, colorpicker, what font
 - blog-demo
 - note about the real world
+  - SASS (nesting)
+  - design system
+  - frontend engineer works with design team

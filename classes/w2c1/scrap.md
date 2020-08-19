@@ -1,0 +1,5 @@
+- form tag, input tags
+- buttons
+- accessibility discussion
+- list tags, ul/ol and li that's nested them
+- using divs to style buttons

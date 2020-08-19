@@ -1,0 +1,18 @@
+/* element { CSSproperty: CSSvalue;} */
+/* .className {CSSproperty: CSSvalue;} */
+/* #id {CSSproperty: CSSvalue;} */
+
+body {
+  background-color: #fff7ef;
+  /* colors: #FFFFFF (hex code), rgba(xx, xx, yy, yy) */
+  /* rgba - red, green, blue, alpha (opacity) */
+}
+
+nav ul li {
+  list-style: none;
+  display: inline;
+}
+
+main ul li {
+  list-style: none;
+}
