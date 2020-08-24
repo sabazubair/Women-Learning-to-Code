@@ -221,4 +221,4 @@ console.log(truthAboutAge);
 
 ```
 
-# Homework: 3 practice questions for datatypes & conditionals (easy, medium, hard.)
+# Homework: Practice questions for datatypes & conditionals (easy --> hard)
