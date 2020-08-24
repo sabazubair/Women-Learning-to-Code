@@ -1,36 +1,168 @@
-# Review
-- Review functions
-- Review scope
-- Review if/else statements
+# Outline
+1st hour - Review, For & While loops
+2nd hour - Arrays, Loops + Arrays
+3rd hour - Built-in Array functions
 
-# Loops in Javascript (1st hour)
-- Why: can't call a function over and over again
-- for loop
-    - syntax
-    - predictable number of loops
-- while loop
-    - syntax
-    - unpredictable so use a conditional instead
+# Reviewing W3C2: Functions, Scope, If/Else statements
+How did homework go? Let's go over them.
 
-# Arrays in Javascript (2nd hour)
-- one of the composite datatypes
-- List - cooking list
-- practice writing them
-- bracket notation
-- access different elements
-- .length property
+- defining and calling functions - with or without parameters
+- global vs local scope
+- if/else statements
 
-# Loops + arrays
-- combine loops and arrays
-- analogy - list of people who are expected to receive something
-- examples
-# Built-in Array functions
-- .map — store as a variable
-- review variables
-# debugging issues using console.log + pseudocode (3rd hour)
-- 3 examples of solving problems
-- hackerrank, leapcode, string manipulation
+# Loops
+
+Defining and calling a function is great. But what happens when you need to call it 100 times?
+```js
+function callMeMaybe() {
+	console.log('But heres my number, so call me maybe');
+}
+callMeMaybe();
+callMeMaybe();
+callMeMaybe();
+callMeMaybe();
+....
+
+```
+#### Calling it 100 times is way too tedious. Introducing for loops:
+
+```js
+for (let i = 0; i < 5; i++) {
+	console.log('Call me maybe?', i);
+}
+```
+Syntax includes: for keyword (remember keywords?), a let variable (remember variables?), a conditional (remember conditionals), a new operator called the increment operator (remember operators?) and curly brackets for a code block.
+
+Let variable is important because this variable is changing every loop. A conditional is important because it will stop the looping at some point. The increment operator is important because this prevents an infinite loop happening (condition is always true) and will allow the condition to become false.
+
+What it does is it will run the code inside the curly brackets a defined number of times. In this case, how many times will it run?
+```js
+/* loop 1
+for (let i = 0; i < 5; i++) {
+	console.log('Call me maybe?', 0);
+}*/
+/* loop 2
+for (let i = 0; i < 5; i++) {
+	console.log('Call me maybe?', 1);
+}*/
+/* loop 3
+for (let i = 0; i < 5; i++) {
+	console.log('Call me maybe?', 2);
+}*/
+/* loop 4
+for (let i = 0; i < 5; i++) {
+	console.log('Call me maybe?', 3);
+}*/
+/* loop 5
+for (let i = 0; i < 5; i++) {
+	console.log('Call me maybe?', 4);
+}*/
+```
+It doesn't matter what value you put for the let variable, as long as you decide how many loops you want to do.
+```js
+for (let i = 0; i < 5; i++) {
+	console.log('Call me maybe?', i);
+}
+// same number of loops as
+for (let i = 1; i < 6; i++) {
+	console.log('Call me maybe?', i);
+}
+```
+Let's practice writing them!
+
+#### But what happens when you have an unpredictable number of loops? While loops!
+When you want code to run continuously as long as a condition is met, while loops are great to use!
+
+A good example is how our computer constantly stays on while you are actively using it. Let's pseudocode it
+```js
+while (userUsingComputer is true) {
+	stayOn();
+}
+```
+As long as we have a condition that can change, while loop will continue to run until the conditional is false.
+
+We can also rewrite our for loop as a while loop:
+```js
+for (let i = 0; i < 5; i++) {
+	console.log('Call me maybe?', i);
+}
+```
+Let's practice writing while loops!
+
+# Arrays
+
+Arrays was one of the composite datatypes, represented by square brackets. Each value is separated by commas and each value is called an element.
+`['apple', 'bananas', 'grapes']`
+
+You can store anything in an array. The analogy was a cooking list. Let's refresh our memory on writing arrays!
+
+#### Value of arrays
+The great thing about arrays is that you can access the values or elements, so arrays become a great way of storing lots of related data, like a huge grocery list.
+
+How to access them is by using square brackets and writing the 'index' of the value you are looking for in-between. Similar to when you go to the library and you have to give them the dewey decimal. The first element's index is always 0 so remember it as 'if you know that the value you're looking for is the first element, subtract 1 and you'll get the index which is 0'
+```js
+const foods = ['apples', 'bananas', 'grapes'];
+console.log(foods[0]) // 'apples'
+console.log(foods[1]) // 'bananas'
+console.log(foods[2]) // 'grapes'
+```
+Let's practice writing arrays and getting the values!
+
+#### The `.length` property
+If you want to know how long an array is, you can find out by using the `.length` property. 
+```js
+const summerMonths = ['june', 'july', 'august'];
+console.log(summerMonths.length); // 3
+```
+When there is no elements inside an array, what would the `.length` equal to?
+
+One of the values of this property is that now you can loop through an array and run code on each element.
+
+# Loops + Arrays
+
+Imagine a list of people who are expected to receive something. You can do this using a for loop.
+```js
+const mondayLineup = ['Maliha', 'Nazia', 'Saba'....];
+
+for (let i = 0; i < mondayLineup.length; i++) {
+	console.log(mondayLineup[i] + ' got a gift!');
+}
+/*
+'Maliha got a gift!'
+'Nazia got a gift!'
+'Saba got a gift!'
+*/
+```
+Let's break this down:
+- an array of 3 elements
+- defined a let variable to be 0 - in this case, because we want to start at the first element
+- condition where i < 3 (length of the array) - Why?
+- increment operator
+
+Let's practice writing them!
+
+# Built-in Array functions: .map
+
+`.map` is a useful array function where you can run code that will change each element in an array and create a new array - which you can then store in a variable
+
+```js
+const concepts = ['for loop', 'while loop','arrays']
+
+const finishedConcepts = concepts.map(function(item) {
+	return item + ' is done';
+})
+console.log(finishedConcepts);
+```
+
+A few things are going on:
+- function inside a function
+- the parameter `item` represents the element in the array - you can name this parameter anything!
+- need to return some value inside this function
+
 # Practice!
-- when learning, learn syntax; dont need to memorize, identify the problems
 
-# Homework will be provided.
+- when learning, don't need to memorize, identify the problems
+
+  
+
+# Homework
