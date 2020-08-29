@@ -141,28 +141,67 @@ Let's break this down:
 
 Let's practice writing them!
 
-# Built-in Array functions: .map
+# Examples
 
-`.map` is a useful array function where you can run code that will change each element in an array and create a new array - which you can then store in a variable
-
-```js
-const concepts = ['for loop', 'while loop','arrays']
-
-const finishedConcepts = concepts.map(function(item) {
-	return item + ' is done';
-})
-console.log(finishedConcepts);
+Creating a function with if/else statement
+```html
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+</script>
+</head>
+<body>
+  <input type="text" name="text" placeholder='Type here' />
+  <button>Click Me</button>
+  <p></p>
+  <script>
+  	$(document).ready(function() {
+      function changeContent() {
+        const currentContent = $('input').val();
+        
+        if (currentContent === '') {
+          $('p').html('Welcome Guest!');
+        } else {
+          $('p').html('Welcome ' + currentContent + '!');
+        }
+      }
+      
+    	$('button').click(changeContent);
+    });
+  </script>
+</body>
 ```
 
-A few things are going on:
-- function inside a function
-- the parameter `item` represents the element in the array - you can name this parameter anything!
-- need to return some value inside this function
-
-# Practice!
-
-- when learning, don't need to memorize, identify the problems
-
-  
+Creating a function with loop, array, if/else statement
+```html
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+</script>
+</head>
+<body>
+  <h5>What is Today's class about?</h5>
+  <input type="text" name="text" placeholder='Type here' />
+  <button>Evaluate</button>
+  <p></p>
+  <script>
+  	$(document).ready(function() {
+      function evaluateAnswer() {
+        const answer = $('input').val();
+        const topics = ['loops', 'arrays', 'examples'];
+        
+        for (let i = 0; i < topics.length; i++) {
+        	if (answer === topics[i]) {
+            $('p').html('Answer is correct!');
+            break;
+          } else {
+            $('p').html('Answer is wrong!');
+          }
+        }
+      }
+      
+    	$('button').click(evaluateAnswer);
+    });
+  </script>
+</body>
+``` 
 
 # Homework
