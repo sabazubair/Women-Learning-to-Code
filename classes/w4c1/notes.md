@@ -86,6 +86,13 @@ We can also rewrite our for loop as a while loop:
 for (let i = 0; i < 5; i++) {
 	console.log('Call me maybe?', i);
 }
+
+let i = 0;
+while (i < 5) {
+  console.log('Call me maybe?', i);
+  i++;
+}
+
 ```
 Let's practice writing while loops!
 
