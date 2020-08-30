@@ -1,7 +1,7 @@
 # Outline
 1st hour - Review, For & While loops
 2nd hour - Arrays, Loops + Arrays
-3rd hour - Built-in Array functions
+3rd hour - Examples
 
 # Reviewing W3C2: Functions, Scope, If/Else statements
 How did homework go? Let's go over them.
@@ -21,7 +21,7 @@ callMeMaybe();
 callMeMaybe();
 callMeMaybe();
 callMeMaybe();
-....
+...
 
 ```
 #### Calling it 100 times is way too tedious. Introducing for loops:
@@ -86,6 +86,13 @@ We can also rewrite our for loop as a while loop:
 for (let i = 0; i < 5; i++) {
 	console.log('Call me maybe?', i);
 }
+
+let i = 0;
+while (i < 5) {
+  console.log('Call me maybe?', i);
+  i++;
+}
+
 ```
 Let's practice writing while loops!
 
@@ -97,8 +104,14 @@ Arrays was one of the composite datatypes, represented by square brackets. Each 
 You can store anything in an array. The analogy was a cooking list. Let's refresh our memory on writing arrays!
 
 #### Value of arrays
-The great thing about arrays is that you can access the values or elements, so arrays become a great way of storing lots of related data, like a huge grocery list.
-
+The great thing about arrays is that you can access the values or elements, so arrays become a great way of storing lots of related data, like a huge grocery list. It's better than storing a whole bunch of variables instead.
+```js
+const foods = ['apples', 'bananas', 'grapes'];
+// VS
+const firstGroceryItem = 'apples'
+const secondGroceryItem = 'bananas'
+const thirdGroceryItem = 'grapes'
+```
 How to access them is by using square brackets and writing the 'index' of the value you are looking for in-between. Similar to when you go to the library and you have to give them the dewey decimal. The first element's index is always 0 so remember it as 'if you know that the value you're looking for is the first element, subtract 1 and you'll get the index which is 0'
 ```js
 const foods = ['apples', 'bananas', 'grapes'];
@@ -120,17 +133,17 @@ One of the values of this property is that now you can loop through an array and
 
 # Loops + Arrays
 
-Imagine a list of people who are expected to receive something. You can do this using a for loop.
+The great thing about arrays is that they allow you to do iterative things or loop through them. Imagine a list of people who are expected to receive something. You can do this using a for loop.
 ```js
-const mondayLineup = ['Maliha', 'Nazia', 'Saba'....];
+const mondayLineup = ['Maliha', 'Nazia', 'Saba'];
 
 for (let i = 0; i < mondayLineup.length; i++) {
-	console.log(mondayLineup[i] + ' got a gift!');
+	console.log(mondayLineup[i] + ' got feedback!');
 }
 /*
-'Maliha got a gift!'
-'Nazia got a gift!'
-'Saba got a gift!'
+'Maliha got feedback!'
+'Nazia got feedback!'
+'Saba got feedback!'
 */
 ```
 Let's break this down:
@@ -143,7 +156,26 @@ Let's practice writing them!
 
 # Examples
 
-Creating a function with if/else statement
+Great! Now that I have some foundation, how do I apply this? Here are 2 examples on how JS turns your static website into something interactive. Don't mind some of the lines as you'll learn more about them next class when we talk about jquery. 
+
+Steps for these examples:
+- How does the HTML document look like without `<script>` tags?
+- Add this code to get a structure for attaching a function to a button when clicked
+```js
+<script>
+  	$(document).ready(function() {
+      function nameOfFunctionThatDescribesPurpose() {
+        
+      }
+      
+    	$('button').click(nameOfFunctionThatDescribesPurpose);
+    });
+  </script>
+```
+- Change function name to reflect purpose and pseudocode inside the function
+- Write the actual code
+
+Showing an input on page
 ```html
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
@@ -152,7 +184,7 @@ Creating a function with if/else statement
 <body>
   <input type="text" name="text" placeholder='Type here' />
   <button>Click Me</button>
-  <p></p>
+  <p>I am currently static and do not change</p>
   <script>
   	$(document).ready(function() {
       function changeContent() {
@@ -163,6 +195,13 @@ Creating a function with if/else statement
         } else {
           $('p').html('Welcome ' + currentContent + '!');
         }
+		/*
+		if (currentContent === '') {
+			$('p').html('Welcome Guest!');
+		} else {
+			$('p').html('Welcome ' + currentContent + '!');
+		}
+		*/
       }
       
     	$('button').click(changeContent);
@@ -171,7 +210,7 @@ Creating a function with if/else statement
 </body>
 ```
 
-Creating a function with loop, array, if/else statement
+Evaluating an answer to a question
 ```html
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
@@ -181,7 +220,7 @@ Creating a function with loop, array, if/else statement
   <h5>What is Today's class about?</h5>
   <input type="text" name="text" placeholder='Type here' />
   <button>Evaluate</button>
-  <p></p>
+  <p>Question has not been evaluated</p>
   <script>
   	$(document).ready(function() {
       function evaluateAnswer() {
