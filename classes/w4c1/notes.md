@@ -151,7 +151,22 @@ Let's practice writing them!
 
 Great! Now that I have some foundation, how do I apply this? Here are 2 examples on how JS turns your static website into something interactive. Don't mind some of the lines as you'll learn more about them next class when we talk about jquery. 
 
-Pseudocode first for any task!
+Steps for these examples:
+- How does the HTML document look like without `<script>` tags?
+- Add this code to get a structure for attaching a function to a button when clicked
+```js
+<script>
+  	$(document).ready(function() {
+      function nameOfFunctionThatDescribesPurpose() {
+        
+      }
+      
+    	$('button').click(nameOfFunctionThatDescribesPurpose);
+    });
+  </script>
+```
+- Change function name to reflect purpose and pseudocode inside the function
+- Write the actual code
 
 Showing an input on page
 ```html
