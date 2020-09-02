@@ -4,20 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather Project</title>
+    <link href="./styles.css" rel="stylesheet" />
   </head>
   <body>
-    <header>
-      <h1>Search for a Weather Forecast</h1>
-      <h2>Current Weather Data by: <a href="#">OpenWeatherMap API</a></h2>
-    </header>
     <main>
-      <form role="search">
+      <h1>Search for a Weather Forecast</h1>
+      <h3>Current Weather Data by: <a href="#">OpenWeatherMap API</a></h3>
+      <form role="search" class="search-bar">
         <input type="text" placeholder="Enter a city..." />
         <button type="submit">Submit</button>
       </form>
-      <section></section>
+      <section id="results"></section>
     </main>
-    <footer>
+    <footer class="footer">
       <span>Made with 💜 by Saba</span>
     </footer>
   </body>

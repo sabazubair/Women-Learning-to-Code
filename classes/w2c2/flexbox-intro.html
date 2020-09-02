@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox</title>
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <style>
+    /* Unlock flexbox properties by using `display: flex` on the parent. */
+    /* Parents have complete control over the children. */
+    /* Try: flex-start, flex-end, center, space-around, space-between */
+    /* .flex-parent {
+      display: flex;
+      justify-content: space-between;
+    } */
+
+    /* flex direction accepts four values: row (default), row-reverse, column, column-reverse */
+    /* .flex-parent {
+      display: flex;
+      flex-direction: column-reverse;
+    } */
+
+    /* Try: flex-start, flex-end, center */
+    /* .flex-parent {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    } */
+
+    /* Add extra class to one child; use align-self property */
+    /* .flex-parent {
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+    } */
+    /* .flex-child.special {
+      align-self: center;
+    } */
+
+    /* Add extra items to one child to see auto-adjustment */
+
+    /* Demo Styling */
+    .flex-parent {
+      border: 5px solid black;
+      width: 80%;
+      height: 80vh;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 10px;
+    }
+    .flex-child {
+      text-align: center;
+      line-height: 50px;
+      margin: 10px;
+      color: white;
+      background-color: green;
+    }
+  </style>
+  <body>
+    <h1 style="text-align:center;">Intro to Flexbox</h1>
+    <div class="flex-parent">
+      <div class="flex-child special">child 1</div>
+      <div class="flex-child">
+        child 2</br>
+        child 2</br>
+        child 2</br>
+      </div>
+      <div class="flex-child">child 3</div>
+    </div>
+  </body>
+</html>
+
+<!-- Notes: Common Flexbox Layout Patterns: https://tobiasahlin.com/blog/common-flexbox-patterns/#graph-horizontal-bars -->
