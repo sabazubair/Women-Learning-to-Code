@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>W3C2 Review</title>
+  </head>
+  <body>
+    <h1>Functions Review</h1>
+    <ul>
+      <li>
+        Terminology: function, parameters, code block, return vs console.log,
+        argument
+      </li>
+      <li>
+        2 ways to declare functions: function declaration, function expression
+      </li>
+      <li>They're all the same.</li>
+      <li>
+        Functions: group statements, store away steps needed to complete a task.
+      </li>
+    </ul>
+  </body>
+  <script>
+    // Function Declaration - named function
+    function area(width, height) {
+      console.log(`Width: ${width}, Height: ${height}`);
+      return width * height;
+    }
+    let size = area(3, 4);
+
+    // Function Expression - anonymous/unnamed function, stored in a variable
+    // let area = function (width, height) {
+    //   return height * width;
+    // };
+    // let size = area(3, 4);
+
+    // Example of Grouping Functionality - if/else + function
+    // function area(width, height) {
+    //   console.log(`Width: ${width}, Height: ${height}`);
+    //   if (width || height === "") {
+    //     console.log("Sorry. We can't calculate the area of a string.");
+    //   }
+    //   return width * height;
+    // }
+    // area("34", 4);
+  </script>
+</html>

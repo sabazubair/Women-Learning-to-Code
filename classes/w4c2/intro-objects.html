@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Objects</title>
+  </head>
+  <body>
+    <h1>Intro to Objects</h1>
+    <ol>
+      <li>
+        In our review, we saw that arrays are officially documented as
+        "list-like objects". Remember that definition. You'll understand it
+        entirely by the end of this lecture.
+      </li>
+      <li>
+        Objects group together a set of variables and functions to create a
+        model of something that you would recognize from the real world.
+      </li>
+      <li>In an object, variables become known as properties.</li>
+      <li>In an object, functions become known as methods.</li>
+      <li>
+        Visually: objects have {} (in the same way arrays have []) but unlike
+        arrays, objects are not indexed. Order does not matter. Objects are
+        created in key/value pairs.
+      </li>
+      <li>Key's are unique!</li>
+      <li>
+        We can access data stored in an object using either the dot notation or
+        the square bracket notation.
+      </li>
+    </ol>
+  </body>
+  <script>
+    let hotel = {
+      name: "Four Seasons",
+      rooms: 25,
+      booked: 20,
+      gym: true,
+      roomTypes: ["twin", "double", "suite"],
+      checkAvailability: function () {
+        return this.rooms - this.booked;
+      },
+    };
+    console.log(hotel);
+    // console.log(hotel["name"]);
+    // console.log(hotel.name);
+    // console.log(hotel.booked);
+    // console.log(hotel["booked"]);
+    // console.log(hotel.checkAvailability());
+
+    // RE-ASSIGN VALUES
+    // hotel.gym = false;
+
+    // ADD PROPERTIES
+    // hotel.pool = true;
+    // hotel["pool"] = true;
+
+    // DELETE PROPERTIES
+    // delete hotel.booked;
+    // console.log(hotel);
+  </script>
+</html>

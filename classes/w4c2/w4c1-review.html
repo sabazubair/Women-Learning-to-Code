@@ -3,37 +3,97 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Week 4, Class 1 Review</title>
+    <title>W4C1 Review</title>
   </head>
   <body>
-    <h1>Week 4, Class 1: Review</h1>
-    <h4>Loops, Arrays, Built-in Array Methods</h4>
-    <img src="1d.jpg" alt="one direction" />
-    <!-- Reminder: Javascript in an HTML file belongs in <script></script> tags! -->
-    <script>
-      // --- ARRAYS ---
-      // Create an Array
-      let oneDirection = ["harry", "niall", "liam", "louis", "zayn"];
-      console.log(oneDirection);
-      // Access elements within Array
-      // oneDirection[3];
-      // What do you expect to see in the console?
-      // --- BUILT IN ARRAY METHODS ---: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
-      // Methods are special functions. We'll learn more about what methods are today! For now, notice we are using a "." to access a method.
-      // --- .length - # of elements in an array
-      console.log(oneDirection.length);
-      // --- .pop - remove last element in array
-      // let goodbyeZayn = ["harry", "niall", "liam", "louis", "zayn"];
-      // goodbyeZayn.pop();
-      // console.log("And then there were 4:", goodbyeZayn);
-      // --- .push - Add item to array
-      // let welcomeBackZayn = ["harry", "niall", "liam", "louis"];
-      // welcomeBackZayn.push("zayn");
-      // console.log("And then everything was okay again:", welcomeBackZayn);
-      // --- LOOPS ---
-      // for (i = 0; i < oneDirection.length; i++) {
-      //   console.log(`One Direction is made up of: ${oneDirection[i]}`);
-      // }
-    </script>
+    <h1>Arrays</h1>
+    <ul>
+      <li>often described as a list; official definition: list-like object</li>
+      <li>square brackets; we refer to items in arrays as "elements"</li>
+      <li>i.e. [elem1, elem2, elem3]</li>
+      <li>arrays are indexed; start at 0</li>
+      <li>
+        contain any type of element: arrays can have arrays, numbers, strings,
+        booleans, objects. Example: let arr = [0, false, "hello", [], ...]
+      </li>
+      <li>
+        Array length is variable. In other words: arrays can be empty, or be
+        4.29 billion elements max. (I checked!)
+      </li>
+      <li>
+        TL;DR; array is a powerful data structure (or: a way to store data)!
+      </li>
+    </ul>
+    <h1>Loops</h1>
+    <ul>
+      <li>
+        loops are commonly used with arrays; hence, why we taught them together.
+        Last class, you learned for loops & while loops.
+      </li>
+      <li>
+        Loops check a condition. If it returns true, a code block will run. Then
+        the condition will be checked again and if it still returns true, the
+        code block will run again.
+      </li>
+      <li>It repeats until the condition returns false.</li>
+      <li>
+        There are 5 different loops in Javascript - for, while, do...while,
+        for...in, for...of. If you understand the top two, you'll have no
+        problem understanding the bottom 3. TBH: I've only ever used the for
+        loop out of this list.
+      </li>
+      <li>The most common loop in Javascript is the for loop.</li>
+      <li>
+        for loop, from the onset, is made up of 3 statements; initialization,
+        condition, update.
+      </li>
+      <li>
+        "for" keyword, (let i=0 ...) is the initialization; creates variable i;
+        sometimes called index.
+      </li>
+      <li>
+        for (let i = 0; i < 10 ...) - is the condition; the value of i was
+        initially set to 0, so in this case, the loop will run 10 times before
+        stopping
+      </li>
+      <li>
+        for (let i=0; i < 10; i++) - update statement; how would you like the
+        loop to proceed. There is also the decrement operator.
+      </li>
+      <li>
+        for (i=0; i > 10; i++) {code block} - what you'd like to occur every
+        time the loop runs
+      </li>
+      <li>
+        The while loop loops through a block of code as long as a specified
+        condition is true.
+      </li>
+      <li>
+        IRL, you'll be most encouraged to use: map, reduce, filter to loop, or
+        "iterate" + perform a transformation on arrays. They are similar to for
+        and while loops.
+      </li>
+    </ul>
   </body>
+  <script>
+    // NOTE: `This is template literal syntax. This is just a string, created with backticks, and the use of the dollar sign + {} indicate a variable, i.e. ${variable}.`
+    // Let's write a for loop.
+    for (let i = 0; i < 10; i++) {
+      // console.log(`${i}`);
+    }
+
+    // While Loop Example
+    let text = "";
+    let i = 0;
+    while (i < 10) {
+      text = `The number is ${i}`;
+      i++;
+      // console.log(text);
+    }
+    // Write Javascript Here
+    let arr = ["Hello", 8, true, ["dog", "cat", "turtle"]];
+    for (let i = 0; i < arr.length; i++) {
+      // console.log(arr[i]);
+    }
+  </script>
 </html>
