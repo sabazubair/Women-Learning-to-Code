@@ -45,8 +45,16 @@ console.log(mondayClass.class) // 'W5C2'
 Jquery is a JavaScript library, meaning a group of pre-made Javascript code ready for use - in our case, Jquery helps lessen code that you would have had to write in order to modify HTML elements on a page.
 
 Steps to use Jquery
-1. Include CDN within script tag
-2. Inside `<script>`, write code inside `document.ready(function() { <code> })`
+1. Include CDN within script tag: 
+```
+<script
+	src="https://code.jquery.com/jquery-3.5.1.min.js"
+	integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+	crossorigin="anonymous"
+>
+</script>
+```
+2. Inside `<script>`, write jquery code inside `document.ready(function() { <code> })`
 
 Syntax is:
 ```js
@@ -56,11 +64,40 @@ where the value in the selector is the HTML attributes like element, class, id, 
 
 # `.on` and `.append`
 
-`.on` and `.append`
+`.on` is a method where you can specify functions to be called based on events. 
+Syntax is  `$(selector).on(event, function)`
 
-Let's practice with 2 methods before we dive into our weather project: `.on` and `.append` (have getWeather and displayWeather (for each line, display the input)
+Here's an example from last class: 
+```
+$('button').on('click', function() {
+	$(this).css("background-color", "red");
+	$(this).addClass("enlargen");
+})
+```
 
+`.append` is a method where you can insert content (an HTML string or element) as the last child element inside another element (parent element).
+Syntax is `$(parentselector).append(content)`
+
+Example: `$('#results').append("<p>Test</p>")`
+
+# Code-along: Display Input
+
+Let's dive into our weather project with `.on` and `.append` to display the input. This will help set up our project for the final piece which is to get information from a third party.
+1. add CDN
+2. add script tag with `$(document).ready(`
+3. `.on('submit')`
+4. getWeather - introduce template literal
+5. displayWeather
+
+#### For reference:
 ```html
+<script
+	src="https://code.jquery.com/jquery-3.5.1.js"
+	integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+	crossorigin="anonymous"
+>
+</script>
+<script>
 $(document).ready(function () {
 	const getWeather = function(search) {
 		console.log(search);
@@ -72,7 +109,6 @@ const displayWeatherCard = (results) => {
 		`
 		<div class="card-deck">
 			<div class="card-body">
-				<img src="${iconURL}"/>
 				<h4 class="card-title">City: ${results}</h4>
 				<p class="card-text">Temp: ${results}°C</p>
 				<p class="card-text">Feels like: ${results}°C</p>
@@ -95,9 +131,8 @@ $("form").on("submit", function (event) {
 	$("input[type=text]").val(" ");
 	});
 });
+</script>
 ```
-
-Now we'll revisit our weather project and use a few methods to display the input. This will help set up our project for the final piece which is to get information from a third party.
 
 # How a Request is Made feat. APIs
 
@@ -128,14 +163,22 @@ An API Key is a code that allows the server or API to identify what project or a
 
 `.ajax` is a Jquery method that allows you to make a request with ease without worrying about  the complicated nature of sending a request.
 ```js
+const city = 'Toronto'
 $.ajax({
-	url: `https://api.openweathermap.org/data/2.5/weather?q=Toronto&units=metric&appid=APIKEY`,
+	url: `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=APIKEY`,
 	method: "GET",
 	dataType: "json",
 }).done(function (results) {
 	console.log(results);
 });
 ```
+💡 Note: in `url`, this is a **template literal** which makes writing variable strings WAY easier. Syntax is:
+```
+`text ${variable}`
+```
+No more struggles with forgetting a space! re: string concatenation
+
+---
 
 There are a few methods you can specify to an API. Common ones include 'GET' which is literally 'getting' a resource but there is also 'POST' which is 'posting' to a resource, similar to when you post to Instagram.
 
@@ -145,9 +188,15 @@ Datatype here is referring to how you are expecting to see the server response. 
 
 Let's see this example in action!
 
+# Code-along: Use Openweathermap API
+
 Now we'll fix our 2 functions to include the data we received from Openweathermap and then we're done!
 
+1. for getWeather, add `$.ajax` and add console.log inside `.done` to show the API data and [object] on page
+2. for displayWeatherCard, add icon and iconURL + `<img src />` & change results to object properties
+
 ```html
+<script>
 $(document).ready(function () {
 	const getWeather = function(search) {
 		console.log(search);
@@ -190,7 +239,8 @@ $("form").on("submit", function (event) {
 	$("input[type=text]").val(" ");
 	});
 });
+</script>
 ```
 
-
+And you're done!!! 🎉🎉🎉
 > Written with [StackEdit](https://stackedit.io/).
